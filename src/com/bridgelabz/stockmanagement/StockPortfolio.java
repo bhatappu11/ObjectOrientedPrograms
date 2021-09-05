@@ -14,4 +14,10 @@ public class StockPortfolio {
 	public void addStock(Stock stock) {
 		stocks.add(stock);
 	}
+
+	@Override
+	public String toString() {
+		return "StockPortfolio [noOfStocks=" + noOfStocks + ", stocks=" + stocks + "]";
+	}
+	
 }

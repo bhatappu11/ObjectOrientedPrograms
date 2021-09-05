@@ -2,9 +2,9 @@ package com.bridgelabz.stockmanagement;
 
 public class Stock {
 	private String stockName;
-	private	Integer numberOfShares;
+	private	int numberOfShares;
 	private Double sharePrice;
-	public Stock(String stockName, Integer numberOfShares, Double sharePrice) {
+	public Stock(String stockName, int numberOfShares, Double sharePrice) {
 		this.stockName = stockName;
 		this.numberOfShares = numberOfShares;
 		this.sharePrice = sharePrice;
@@ -30,5 +30,11 @@ public class Stock {
 	public Double stockValue() {
 		return this.sharePrice*this.numberOfShares;
 	}
+	@Override
+	public String toString() {
+		return "Stock [stockName=" + stockName + ", numberOfShares=" + numberOfShares + ", sharePrice=" + sharePrice
+				+ ", stockValue=" + stockValue() + "]\n";
+	}
+	
 	
 }
