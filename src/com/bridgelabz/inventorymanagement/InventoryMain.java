@@ -1,4 +1,4 @@
-package com.bridgelabz.objectorientedprogram;
+package com.bridgelabz.inventorymanagement;
 
 import com.bridgelabz.linkedlistfiles.INode;
 import com.bridgelabz.linkedlistfiles.LinkedList;

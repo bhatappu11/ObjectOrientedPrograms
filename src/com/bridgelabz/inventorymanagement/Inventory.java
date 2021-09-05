@@ -1,4 +1,4 @@
-package com.bridgelabz.objectorientedprogram;
+package com.bridgelabz.inventorymanagement;
 
 public class Inventory {
 	private String inventoryName;
