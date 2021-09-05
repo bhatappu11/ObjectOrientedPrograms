@@ -19,7 +19,7 @@ public class StockMain {
 			stockPortfolio.addStock(stock);
 		}
 		System.out.println(stockPortfolio);
-
+		stockPortfolio.totalStockValue();
 	}
 
 }
