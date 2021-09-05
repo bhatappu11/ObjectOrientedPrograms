@@ -26,6 +26,9 @@ public class Stock {
 	}
 	public void setSharePrice(Double sharePrice) {
 		this.sharePrice = sharePrice;
-	}	
+	}
+	public Double stockValue() {
+		return this.sharePrice*this.numberOfShares;
+	}
 	
 }
