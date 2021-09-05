@@ -10,7 +10,7 @@ public class StockAccountMain {
 		myStocks.valueOf();
 		boolean flag = true;
 		while(flag) {
-			System.out.println("Select option 1:add Companyshares   2: remove companyshares   3:buy shares   4:sell shares   5: print Report  6:get value  7:exit");
+			System.out.println("Select option 1:add Companyshares   2: remove companyshares   3:buy shares   4:sell shares   5: print Report 6:print transactions  7:get value  8:exit");
 			int option = sc.nextInt();
 			int amount=0;
 			String symbol;
@@ -42,6 +42,8 @@ public class StockAccountMain {
 					myStocks.printReport();
 					break;
 				case 6:
+					myStocks.printTransaction();
+				case 7:
 					System.out.println("the total value of shares : " +myStocks.valueOf());
 					break;
 				default:

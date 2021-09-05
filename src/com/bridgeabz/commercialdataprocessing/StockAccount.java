@@ -2,11 +2,16 @@ package com.bridgeabz.commercialdataprocessing;
 
 import com.bridgelabz.linkedlistfiles.LinkedList;
 import com.bridgelabz.linkedlistfiles.Node;
+import com.bridgelabz.linkedlistfiles.Queue;
+import com.bridgelabz.linkedlistfiles.Stack;
 
 import java.util.*;
 
 public class StockAccount {
 	LinkedList<CompanyShares> stockList;
+	Stack<String> purchasedStack = new Stack<String>();
+	Stack<String> soldStack = new Stack<String>();
+	Queue<String> transactionDateTime = new Queue<String>();
 	Double total ;
 	public StockAccount() {
 		stockList =new LinkedList<CompanyShares>();
@@ -30,6 +35,8 @@ public class StockAccount {
 				double value = tempNode.getKey().getPricePerShare() * (amount+currentShares);
 				this.total = value;
 				tempNode.getKey().setValue(value);
+				purchasedStack.push(tempNode);
+				transactionDateTime.enqueue(tempNode);
 				System.out.println(" added "+amount+" shares to stockSymbol "+symbol+" updated value is "+value);
 				return;
 			}
@@ -49,6 +56,8 @@ public class StockAccount {
 				tempNode.getKey().setNumberOfShares(currentShares-amount);
 				double value = tempNode.getKey().getPricePerShare() * (currentShares-amount);
 				tempNode.getKey().setValue(value);
+				soldStack.push(tempNode);
+				transactionDateTime.enqueue(tempNode);
 				this.total = value;
 				System.out.println(" sold "+amount+" shares of stockSymbol "+symbol+" updated value is "+value);
 				return;
@@ -77,8 +86,8 @@ public class StockAccount {
 			CompanyShares stock = new CompanyShares(symbol,numOfShares,price);
 			stockList.append(new Node<CompanyShares>(stock));
 		
+		}
 	}
-}
 
 	public void removeCompanyShares(String symbol) {
 		Node<CompanyShares> tempNode = (Node<CompanyShares>) stockList.getHead();
@@ -93,4 +102,20 @@ public class StockAccount {
 		}
 		System.out.println("CompanyShare with symbol "+symbol+" is not found");
 	}
+
+	@Override
+	public String toString() {
+		return "StockAccount [stockList=" + stockList + ", purchasedStack=" + purchasedStack + ", soldStack="
+				+ soldStack + ", transactionDateTime=" + transactionDateTime + ", total=" + total + "]";
+	}
+
+	public void printTransaction() {
+		System.out.println("purcahsed stack");
+		purchasedStack.printStack();
+		System.out.println("sold stack");
+		soldStack.printStack();
+		System.out.println("Date time");
+		transactionDateTime.printQueue();
+	}
+	
 }
