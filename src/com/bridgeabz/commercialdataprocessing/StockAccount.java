@@ -79,4 +79,18 @@ public class StockAccount {
 		
 	}
 }
+
+	public void removeCompanyShares(String symbol) {
+		Node<CompanyShares> tempNode = (Node<CompanyShares>) stockList.getHead();
+		while(tempNode != null) {
+			String currentSymbol = tempNode.getKey().getStockSymbol();
+			if(currentSymbol.equals(symbol)) {
+				stockList.delete(tempNode.getKey());
+				System.out.println("deleted Company share with symbol : "+tempNode.getKey().getStockSymbol());
+				return;
+			}
+			tempNode = (Node<CompanyShares>)tempNode.getNext();
+		}
+		System.out.println("CompanyShare with symbol "+symbol+" is not found");
+	}
 }

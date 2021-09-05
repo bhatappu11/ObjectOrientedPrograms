@@ -10,29 +10,38 @@ public class StockAccountMain {
 		myStocks.valueOf();
 		boolean flag = true;
 		while(flag) {
-			System.out.println("Select option 1:buy shares   2:sell shares   3: print Report  4:get value  5:exit");
+			System.out.println("Select option 1:add Companyshares   2: remove companyshares   3:buy shares   4:sell shares   5: print Report  6:get value  7:exit");
 			int option = sc.nextInt();
 			int amount=0;
 			String symbol;
 			switch(option) {
 				case 1:
+					myStocks.addCompanyShares();
+					myStocks.valueOf();
+					break;
+				case 2:
+					System.out.println("Enter the Share Symbol is remove it");
+					myStocks.removeCompanyShares(sc.next());
+					myStocks.valueOf();
+					break;
+				case 3:
 					System.out.println("enter the share amount");
 					amount = sc.nextInt();
 					System.out.println("enter the stock symbol");
 					symbol = sc.next();
 					myStocks.buy(amount, symbol);
 					break;
-				case 2:
+				case 4:
 					System.out.println("enter the share amount");
 					amount = sc.nextInt();
 					System.out.println("enter the stock symbol");
 					symbol = sc.next();
 					myStocks.sell(amount, symbol);
 					break;
-				case 3:
+				case 5:
 					myStocks.printReport();
 					break;
-				case 4:
+				case 6:
 					System.out.println("the total value of shares : " +myStocks.valueOf());
 					break;
 				default:
