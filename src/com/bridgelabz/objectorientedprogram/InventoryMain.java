@@ -14,6 +14,9 @@ public class InventoryMain {
 		inventoryList.add(new Node<Inventory>(rice));
 		inventoryList.add(new Node<Inventory>(wheat));
 		inventoryList.add(new Node<Inventory>(pulses));
+		rice.valueOfInventory();
+		wheat.valueOfInventory();
+		pulses.valueOfInventory();
 		inventoryList.printNodes();
 	}
 

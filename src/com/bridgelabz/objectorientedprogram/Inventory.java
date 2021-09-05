@@ -27,10 +27,17 @@ public class Inventory {
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
+	
+	public Double valueOfInventory() {
+		return this.getPrice()*this.getWeight();
+		
+	}
 	@Override
 	public String toString() {
-		return "Inventory [inventoryName=" + inventoryName + ", price=" + price + ", weight=" + weight + "]";
+		return "Inventory [InventoryName=" + inventoryName + ", Price=" + price + ", Weight=" + weight
+				+ ", Value=" + valueOfInventory() + "]";
 	}
+	
 	
 	
 	
