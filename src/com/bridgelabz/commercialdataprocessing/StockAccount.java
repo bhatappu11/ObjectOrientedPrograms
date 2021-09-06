@@ -1,4 +1,4 @@
-package com.bridgeabz.commercialdataprocessing;
+package com.bridgelabz.commercialdataprocessing;
 
 import com.bridgelabz.linkedlistfiles.LinkedList;
 import com.bridgelabz.linkedlistfiles.Node;

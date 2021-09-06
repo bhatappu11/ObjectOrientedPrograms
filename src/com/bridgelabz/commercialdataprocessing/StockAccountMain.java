@@ -1,4 +1,4 @@
-package com.bridgeabz.commercialdataprocessing;
+package com.bridgelabz.commercialdataprocessing;
 
 import java.util.*;
 public class StockAccountMain {
